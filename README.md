@@ -20,7 +20,7 @@ This parser reads expressions with the following rules:
 
 tokens(non-terminals) are defined as such:
 
-NUMBER - @"\d+" \br
+NUMBER - @"\d+" 
 OPERATOR - @"\+|\-|\*|/|\^"
 FUNCTION - @"sin|asin|cos|acos|tan|atan|sqrt|ln|log"
 LEFT_BRACKETS - @"\("
