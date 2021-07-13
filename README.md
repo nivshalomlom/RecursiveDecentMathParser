@@ -8,8 +8,8 @@ Rules(non-terminals) are defined as such:
 2. expression: term op expression <br />
      | term <br />
      | /* empty */
-3. term: LEFT_BRACKETS expression RIGHT_BRACKETS
-       | number
+3. term: LEFT_BRACKETS expression RIGHT_BRACKETS <br />
+  | number
        | function
 4. function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS
            | "log" log
