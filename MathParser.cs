@@ -79,11 +79,7 @@ namespace RecursiveDecentMathParser
         }
 
         /* 
-         * op: '+'
-         *   | '-'
-         *   | '*'
-         *   | '/'
-         *   | '^' 
+         * op: OPERATOR
          */
         private static char op()
         {
@@ -94,7 +90,7 @@ namespace RecursiveDecentMathParser
 
         /*
          * number: NUMBER DOT NUMBER
-         *       | NUMBER
+         *       | NUMBER   
          */
         private static double number()
         {
@@ -128,7 +124,7 @@ namespace RecursiveDecentMathParser
         }
 
         /* 
-        * function: (("sin"|"asin"|"cos"|"acos"|"tan"|"atan"|"sqrt"|"ln") LEFT_BRACKETS number LEFT_BRACKETS)
+        * function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS
         *         | "log" log
         */
         private static double function()
