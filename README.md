@@ -44,6 +44,23 @@ code:
 ## How does it work?
 lets break down the previous example for the input "5 + 4 * 5"
 
-| current rule | current input | token matched | toke value |
-| ------------ | ------------- | ------------- | ---------- |
-| start        | 5 + 4 * 5     |               |            |
+| current rule | current input | token matched | toke value | current output | previous operator | previous number | computation done |
+| ------------ | ------------- | ------------- | ---------- | -------------- | ----------------- | --------------- | ---------------- |
+| start        | 5 + 4 * 5     |               |            | 0              |                   |                 |                  |
+| expression   | 5 + 4 * 5     |               |            | 0              |                   |                 |                  |
+| term         | 5 + 4 * 5     |               |            | 0              |                   |                 |                  |
+| number       | 5 + 4 * 5     |               |            | 0              |                   |                 |                  |
+| number       | + 4 * 5       | NUMBER        | 5          | 0              |                   |                 | 0 + 5            |
+| expression   | + 4 * 5       |               |            | 5              |                   |                 |                  |
+| op           | + 4 * 5       |               |            | 5              |                   |                 |                  |
+| op           | 4 * 5         | OPERATOR      | +          | 5              | +                 | 5               |                  |
+| expression   | 4 * 5         |               |            | 5              | +                 | 5               |                  |
+| term         | 4 * 5         |               |            | 5              | +                 | 5               |                  |
+| number       | 4 * 5         |               |            | 5              | +                 | 5               |                  |
+| number       | * 5           | NUMBER        | 4          | 5              | +                 | 4               |                  |
+| expression   | * 5           |               |            | 5              | +                 | 4               |                  |
+| op           | 5             |               |            | 5              | *                 | 4               |                  |
+| expression   | 5             |               |            | 5              | *                 | 4               |                  |
+| number       | 5             |               |            | 5              | *                 | 4               |                  |
+| number       |               | NUMBER        | 5          | 5              | *                 | 4               | 4 * 5            |
+| expression   |               | NUMBER        | 5          | 25             | *                 | 4               | 5 + 20           |
