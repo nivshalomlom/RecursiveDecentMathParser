@@ -63,4 +63,4 @@ lets break down the previous example for the input "5 + 4 * 5"
 | expression   | 5             |               |            | 5              | *                 | 4               |                  |
 | number       | 5             |               |            | 5              | *                 | 4               |                  |
 | number       |               | NUMBER        | 5          | 5              | *                 | 4               | 4 * 5            |
-| expression   |               | NUMBER        | 5          | 25             | *                 | 4               | 5 + 20           |
+| expression   |               |               |            | 25             | *                 | 4               | 5 + 20           |
