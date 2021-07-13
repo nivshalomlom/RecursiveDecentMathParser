@@ -29,7 +29,7 @@ tokens(terminals) are defined as such:
 * DOT - @"\\."
 * SPACES - @"\s*"
 
-note: the tokens are defined in the c#(.net) regex format
+**note**: the tokens are defined in the c#(.net) regex format
 
 ## Exmaple
 code:
@@ -65,5 +65,13 @@ lets break down the previous example for the input "5 + 4 * 5"
 | number       |               | NUMBER        | 5          | 5              | *                 | 4               | 4 * 5            |
 | expression   |               |               |            | 25             | *                 | 4               | 5 + 20           |
 
-as you can see in every step of the process using the rules defined above, the parser knows what to look for.
-note: you can see that some values and operators are kept and used later, its to keep the right order of operations(multiplicatio/divison and then addition/subtraction)
+table values explained:
+* current rule - the rule the parser is looking at
+* current input - whats left of the input given to the parser
+* token matched - if a token was matched in this line this is its name
+* token value - if a token was matched in this line this is the matched text value
+* current ouput - the current output the parser has computed
+* previous operator - the last matched operator
+* previous number - the last matched number
+* computation done - shows any computations and parser has done in a given line
+**note**: you can see that some values and operators are kept and used later, its to keep the right order of operations(multiplicatio/divison and then addition/subtraction), for mote information check the source code
