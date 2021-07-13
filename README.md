@@ -21,11 +21,11 @@ This parser reads expressions with the following rules:
 tokens(non-terminals) are defined as such:
 
 * NUMBER - @"\d+" 
-* OPERATOR - @"\\+|\\-|\\*|/|\^"
+* OPERATOR - @"\\+|\\-|\\*|/|\\^"
 * FUNCTION - @"sin|asin|cos|acos|tan|atan|sqrt|ln|log"
 * LEFT_BRACKETS - @"\\("
 * RIGHT_BRACKETS - @"\\)"
-* DOT - @"\."
+* DOT - @"\\."
 * SPACES - @"\s*"
 
 note: the tokens are defined in the c#(.net) regex format
