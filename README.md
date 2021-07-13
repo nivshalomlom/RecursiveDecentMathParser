@@ -5,17 +5,17 @@ A recursive decent praser to read and compute mathematical expressions, accordin
 Rules(non-terminals) are defined as such:
 
 1. start: expression
-2. expression: term op expression  
-             | term  
+2. expression: term op expression
+             | term
              | /* empty */
-3. term: LEFT_BRACKETS expression RIGHT_BRACKETS <br/>       
+3. term: LEFT_BRACKETS expression RIGHT_BRACKETS
        | number
        | function
 4. function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS
            | "log" log
-5. number: NUMBER DOT NUMBER  
+5. number: NUMBER DOT NUMBER
          | NUMBER
-6. log: number LEFT_BRACKETS number RIGHT_BRACKETS  
+6. log: number LEFT_BRACKETS number RIGHT_BRACKETS
       | LEFT_BRACKETS number RIGHT_BRACKETS
 7. op: OPERATOR
 
