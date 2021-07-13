@@ -1,6 +1,7 @@
-# RecursiveDecentMathParser
+### RecursiveDecentMathParser
 A recursive decent praser to read and compute mathematical expressions.
 
+# Parser rules and tokens
 This parser reads expressions with the following rules:
 
 1. start: expression
