@@ -1,17 +1,12 @@
 # RecursiveDecentMathParser
 A recursive decent praser to read and compute mathematical expressions, according to the defined rules and tokens.
 
-The action of every agent <br />
-  into the world <br />
-starts <br />
-  from their physical selves. <br />
-
 ## Parser rules and tokens
 Rules(non-terminals) are defined as such:
 
 1. start: expression
 2. expression: term op expression <br />
-  | term <br />
+             | term <br />
              | /* empty */
 3. term: LEFT_BRACKETS expression RIGHT_BRACKETS
        | number
