@@ -57,13 +57,13 @@ lets break down the previous example for the input "5 + 4 * 5"
 | expression   | 4 * 5         |               |            | 5              | +                 | 5               |                  |
 | term         | 4 * 5         |               |            | 5              | +                 | 5               |                  |
 | number       | 4 * 5         |               |            | 5              | +                 | 5               |                  |
-| number       | * 5           | NUMBER        | 4          | 5              | +                 | 4               |                  |
+| number       | * 5           | NUMBER        | 4          | 5              | +                 | 5               |                  |
 | expression   | * 5           |               |            | 5              | +                 | 4               |                  |
 | op           | 5             |               |            | 5              | *                 | 4               |                  |
 | expression   | 5             |               |            | 5              | *                 | 4               |                  |
 | number       | 5             |               |            | 5              | *                 | 4               |                  |
 | number       |               | NUMBER        | 5          | 5              | *                 | 4               | 4 * 5            |
-| expression   |               |               |            | 25             | *                 | 4               | 5 + 20           |
+| expression   |               |               |            | 25             | *                 | 5               | 5 + 20           |
 
 table values explained:
 * current rule - the rule the parser is looking at.
