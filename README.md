@@ -16,7 +16,7 @@ Rules(non-terminals) are defined as such:
 5. number: NUMBER DOT NUMBER <br />
     | NUMBER
 6. log: number LEFT_BRACKETS number RIGHT_BRACKETS <br />
-  | LEFT_BRACKETS number RIGHT_BRACKETS
+ | LEFT_BRACKETS number RIGHT_BRACKETS
 7. op: OPERATOR
 
 tokens(terminals) are defined as such:
