@@ -6,7 +6,7 @@ Rules(non-terminals) are defined as such:
 
 1. start: expression
 2. expression: term op expression <br />
-             | term <br />
+       | term <br />
              | /* empty */
 3. term: LEFT_BRACKETS expression RIGHT_BRACKETS
        | number
