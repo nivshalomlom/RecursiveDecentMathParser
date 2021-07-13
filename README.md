@@ -1,8 +1,8 @@
 # RecursiveDecentMathParser
-A recursive decent praser to read and compute mathematical expressions.
+A recursive decent praser to read and compute mathematical expressions, according to the defined rules and tokens.
 
 ## Parser rules and tokens
-This parser reads expressions with the following rules:
+Rules(non-terminals) are defined as such
 
 1. start: expression
 2. expression: term op expression
@@ -19,7 +19,7 @@ This parser reads expressions with the following rules:
       | LEFT_BRACKETS number RIGHT_BRACKETS
 7. op: OPERATOR
 
-tokens(non-terminals) are defined as such:
+tokens(terminals) are defined as such:
 
 * NUMBER - @"\d+" 
 * OPERATOR - @"\\+|\\-|\\*|/|\\^"
@@ -30,3 +30,9 @@ tokens(non-terminals) are defined as such:
 * SPACES - @"\s*"
 
 note: the tokens are defined in the c#(.net) regex format
+
+## Exmaple
+code:
+```c#
+ Console.WriteLine(MathParser.parse("5 + 4 * 5");
+ ```
