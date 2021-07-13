@@ -5,7 +5,7 @@ A recursive decent praser to read and compute mathematical expressions, accordin
 Rules(non-terminals) are defined as such:
 
 1. start: expression
-2. expression: term op expression
+2. expression: term op expression <br />
              | term
              | /* empty */
 3. term: LEFT_BRACKETS expression RIGHT_BRACKETS
