@@ -36,3 +36,7 @@ code:
 ```c#
  Console.WriteLine(MathParser.parse("5 + 4 * 5");
  ```
+ output:
+```bash
+25
+```
