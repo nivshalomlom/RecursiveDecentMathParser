@@ -51,8 +51,8 @@ lets break down the previous example for the input "5 + 4 * 5"
 | term         | 5 + 4 * 5     |               |            | 0              |                   |                 |                  |
 | number       | 5 + 4 * 5     |               |            | 0              |                   |                 |                  |
 | number       | + 4 * 5       | NUMBER        | 5          | 0              |                   |                 | 0 + 5            |
-| expression   | + 4 * 5       |               |            | 5              |                   |                 |                  |
-| op           | + 4 * 5       |               |            | 5              |                   |                 |                  |
+| expression   | + 4 * 5       |               |            | 5              |                   | 5               |                  |
+| op           | + 4 * 5       |               |            | 5              |                   | 5               |                  |
 | op           | 4 * 5         | OPERATOR      | +          | 5              | +                 | 5               |                  |
 | expression   | 4 * 5         |               |            | 5              | +                 | 5               |                  |
 | term         | 4 * 5         |               |            | 5              | +                 | 5               |                  |
