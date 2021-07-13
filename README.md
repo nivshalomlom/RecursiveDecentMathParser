@@ -12,7 +12,7 @@ Rules(non-terminals) are defined as such:
   | number <br />
   | function
 4. function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS <br />
-   | "log" log
+    | "log" log
 5. number: NUMBER DOT NUMBER
          | NUMBER
 6. log: number LEFT_BRACKETS number RIGHT_BRACKETS
