@@ -2,7 +2,7 @@
 A recursive decent praser to read and compute mathematical expressions, according to the defined rules and tokens.
 
 ## Parser rules and tokens
-Rules(non-terminals) are defined as such
+Rules(non-terminals) are defined as such:
 
 1. start: expression
 2. expression: term op expression
@@ -66,13 +66,13 @@ lets break down the previous example for the input "5 + 4 * 5"
 | expression   |               |               |            | 25             | *                 | 4               | 5 + 20           |
 
 table values explained:
-* current rule - the rule the parser is looking at
-* current input - whats left of the input given to the parser
-* token matched - if a token was matched in this line this is its name
-* token value - if a token was matched in this line this is the matched text value
-* current ouput - the current output the parser has computed
-* previous operator - the last matched operator
-* previous number - the last matched number
-* computation done - shows any computations and parser has done in a given line  
+* current rule - the rule the parser is looking at.
+* current input - whats left of the input given to the parser.
+* token matched - if a token was matched in this line this is its name.
+* token value - if a token was matched in this line this is the matched text value.
+* current ouput - the current output the parser has computed.
+* previous operator - the last matched operator.
+* previous number - the last matched number.
+* computation done - shows any computations and parser has done in a given line.
 
-**note**: you can see that some values and operators are kept and used later, its to keep the right order of operations(multiplicatio/divison and then addition/subtraction), for mote information check the source code
+**note**: you can see that some values and operators are kept and used later, its to keep the right order of operations(multiplicatio/divison and then addition/subtraction), for more information check the source code.
