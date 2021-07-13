@@ -73,5 +73,5 @@ table values explained:
 * current ouput - the current output the parser has computed
 * previous operator - the last matched operator
 * previous number - the last matched number
-* computation done - shows any computations and parser has done in a given line
+* computation done - shows any computations and parser has done in a given line  
 **note**: you can see that some values and operators are kept and used later, its to keep the right order of operations(multiplicatio/divison and then addition/subtraction), for mote information check the source code
