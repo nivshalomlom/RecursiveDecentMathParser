@@ -9,8 +9,8 @@ Rules(non-terminals) are defined as such:
              | term  
              | /* empty */
 3. term: LEFT_BRACKETS expression RIGHT_BRACKETS  
-       | number  
-       | function
+           | number  
+           | function
 4. function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS
            | "log" log
 5. number: NUMBER DOT NUMBER  
