@@ -44,6 +44,6 @@ code:
 ## How does it work?
 lets break down the previous example for the input "5 + 4 * 5"
 
-current rule | current input | token matched | toke value
----------------------------------------------------------
-start        | 5 + 4 * 5    |
+|current rule | current input | token matched | toke value|
+|---------------------------------------------------------|
+|start        | 5 + 4 * 5     |               |           |
