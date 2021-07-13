@@ -13,10 +13,10 @@ Rules(non-terminals) are defined as such:
   | function
 4. function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS <br />
     | "log" log
-5. number: NUMBER DOT NUMBER
-         | NUMBER
-6. log: number LEFT_BRACKETS number RIGHT_BRACKETS
-      | LEFT_BRACKETS number RIGHT_BRACKETS
+5. number: NUMBER DOT NUMBER <br />
+    | NUMBER
+6. log: number LEFT_BRACKETS number RIGHT_BRACKETS <br />
+  | LEFT_BRACKETS number RIGHT_BRACKETS
 7. op: OPERATOR
 
 tokens(terminals) are defined as such:
