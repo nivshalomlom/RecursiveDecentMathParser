@@ -26,7 +26,7 @@ namespace RecursiveDecentMathParser
             // Matchamtical terms
             { TOKEN.NUMBER, @"\d+" },
             { TOKEN.OPERATOR, @"\+|\-|\*|/|\^" },
-            { TOKEN.FUNCTION, @"sin|asin|cos|acos|tan|atan|sqrt|ln|log" },
+            { TOKEN.FUNCTION, @"[a-zA-Z]+" },
             // Special charcters
             { TOKEN.LEFT_BRACKETS, @"\(" },
             { TOKEN.RIGHT_BRACKETS, @"\)" },
@@ -39,6 +39,8 @@ namespace RecursiveDecentMathParser
 
         // The parser that handles the text
         private static Parser input;
+
+        private static Dictionary<string, double> variableData;
 
         // A method to match a token with the parser
         private static string match(TOKEN token)
@@ -126,18 +128,38 @@ namespace RecursiveDecentMathParser
         /* 
         * function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS
         *         | "log" log
+        *         | E
+        *         | PI
+        *         | VARIABLE
         */
         private static double function()
         {
+            // get the function name
             string funcName = match(TOKEN.FUNCTION);
+            string lowFuncName = funcName.ToLower();
             if (funcName.Equals("log"))
                 return log();
             else
             {
-                match(TOKEN.LEFT_BRACKETS);
-                double num = number();
-                match(TOKEN.LEFT_BRACKETS);
-                switch (funcName)
+                // check if funcitonn name is a constant
+                if (lowFuncName.Equals("pi"))
+                    return Math.PI;
+                else if (lowFuncName.Equals("e"))
+                    return Math.E;
+                // else preform function on input
+                double num;
+                // check if the input is a function
+                if (input.remainingCharcters() != 0 && input.getFirstCharcter() == '(')
+                    num = term();
+                // else its a variable
+                else
+                {
+                    if (variableData != null && variableData.TryGetValue(funcName, out num))
+                        return num;
+                    throw new Exception("MathParser: error unknown variable \"" + funcName + "\"");
+                }
+                // check what function is needed
+                switch (lowFuncName)
                 {
                     case "sin":
                         return Math.Sin(num);
@@ -156,7 +178,7 @@ namespace RecursiveDecentMathParser
                     case "ln":
                         return Math.Log(num);
                     default:
-                        throw new Exception("MathParser: error unknown function " + funcName);
+                        throw new Exception("MathParser: error unknown function \"" + funcName + "\"");
                 }
             }
         }
@@ -216,6 +238,13 @@ namespace RecursiveDecentMathParser
         /// <returns> the expression's double value </returns>
         public static double parse(string exp)
         {
+            input = new Parser(exp);
+            return expression(0, ' ');
+        }
+
+        public static double parse(string exp, Dictionary<string, double> variableDict)
+        {
+            variableData = variableDict;
             input = new Parser(exp);
             return expression(0, ' ');
         }

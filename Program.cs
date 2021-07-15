@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RecursiveDecentMathParser
 {
@@ -6,8 +7,16 @@ namespace RecursiveDecentMathParser
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("4 ^ 2 + log10(100) + 5 *4 + 5 = " 
-                + MathParser.parse("4 ^ 2 + log10(100) + 5 *4 + 5"));
+            // define variable dictionary
+            Dictionary<string, double> dict = new Dictionary<string, double>()
+            {
+                {"x", 6 },
+                {"y", 8 }
+            };
+
+            // parse x + 2 * y
+            Console.WriteLine(MathParser.parse("x + 2 * y", dict));
+
         }
     }
 }
