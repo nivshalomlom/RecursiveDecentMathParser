@@ -13,6 +13,9 @@ Rules(non-terminals) are defined as such:
   | function
 4. function: FUNCTION LEFT_BRACKETS number LEFT_BRACKETS <br />
     | "log" log
+    | E
+    | PI
+    | VARIABLE
 5. number: NUMBER DOT NUMBER <br />
     | NUMBER
 6. log: number LEFT_BRACKETS number RIGHT_BRACKETS <br />
